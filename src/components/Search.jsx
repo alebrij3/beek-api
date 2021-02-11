@@ -51,10 +51,10 @@ const Search = () => {
           ]
         },
         "duration": {
-          "es-MX": target.duration.value
+          "es-MX": parseInt(target.duration.value)
         },
         "cover": {
-          "es-MX": target.cover.value
+          "es-MX": "https://images.findawayworld.com/v1/image/cover/CD059097"
         }
       }
     }
@@ -99,9 +99,6 @@ const Search = () => {
       </label>
       <label htmlFor="">Duration
         <input type="number" name="duration" />
-      </label>
-      <label htmlFor="">Cover 
-        <input type="text" name="cover" />
       </label>
       <button type="submit">Add Book</button>
     </form>
