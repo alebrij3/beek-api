@@ -3,6 +3,10 @@ import config from '../api-config';
 const Search = () => {
   var requestOptions = {
     method: 'GET',
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer CFPAT-LBtveUvtDi7YjAhsyNzZURthngcrVnIr53eOZjYnxuc`
+    },
     redirect: 'follow'
   };
   
