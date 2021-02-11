@@ -71,6 +71,8 @@ const Search = () => {
       .then(response => response.json())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
+    
+    document.getElementById('add-book').reset()
   }
 
   return(
@@ -83,11 +85,11 @@ const Search = () => {
       <button type="submit">Search</button>
     </form>
 
-    <form action="" onSubmit={addAudiobook}>
+    <form id="add-book" action="" onSubmit={addAudiobook}>
       <label htmlFor=""> Title
         <input type="text" name="title"/>
       </label>
-      <label htmlFor="">
+      <label className="checkbox" htmlFor="">
         <input type="checkbox" name="original"/>
         Original
       </label>

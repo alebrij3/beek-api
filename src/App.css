@@ -35,6 +35,10 @@ form {
 form label {
   width: 100%;
 }
+label.checkbox {
+  display: flex;
+  align-items: center;
+}
 .remove-btn {
   color: red;
   background: none;
