@@ -1,6 +1,9 @@
 const Search = () => {
   return(
-    <h1>Hello World</h1>
+    <form action="">
+      <input type="text"/>
+      <button type="submit">Search</button>
+    </form>
   )
 }
 
