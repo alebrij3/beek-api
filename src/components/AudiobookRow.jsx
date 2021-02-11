@@ -2,8 +2,10 @@ const AudiobookRow = (props) => {
   console.log(props.id)
   return(
     <div className="book-row">
-      <p>{props.title["es-MX"]}</p>
-      <p>{props.authors["es-MX"][0]}</p>
+      <p className="title">{props.title["es-MX"]}</p>
+      <p className="author">{props.authors["es-MX"][0]}</p>
+      <button className="remove-btn">Remove</button>
+      <button>Update</button>
     </div>
   )
 

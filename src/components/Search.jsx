@@ -25,8 +25,33 @@ const Search = () => {
   return(
     <>
     <form action="">
-      <input type="text"/>
+      <label htmlFor="">
+        <input type="text"/>
+      </label>
+      
       <button type="submit">Search</button>
+    </form>
+    <form action="">
+      <label htmlFor=""> Title
+        <input type="text"/>
+      </label>
+      <label htmlFor="">
+        <input type="checkbox"/>
+        Original
+      </label>
+      <label htmlFor="">Author 
+        <input type="text"/>
+      </label>
+      <label htmlFor="">Narrator
+        <input type="text"/>
+      </label>
+      <label htmlFor="">Duration 
+        <input type="text"/>
+      </label>
+      <label htmlFor="">Cover 
+        <input type="text"/>
+      </label>
+      <button>Add Book</button>
     </form>
     <button onClick={getAllAudiobooks}>GetBooks</button>
     {allAudiobooks.map(item =>
