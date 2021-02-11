@@ -1,10 +1,15 @@
-const AudiobookRow = (props) => {
-  console.log(props.id)
-  const removeAudiobook = (id) => {
-    var raw = "";
+import config from '../api-config'
 
-    var requestOptions = {
+const AudiobookRow = (props) => {
+  const removeAudiobook = (id) => {
+    console.log('book to delete: ' + id)
+    const raw = "";
+
+    const requestOptions = {
       method: 'DELETE',
+      headers: {
+        "Authorization": `Bearer ${config.TOKEN}`
+      },
       body: raw,
       redirect: 'follow'
     };
@@ -19,7 +24,7 @@ const AudiobookRow = (props) => {
     <div className="book-row">
       <p className="title">{props.title["es-MX"]}</p>
       <p className="author">{props.authors["es-MX"][0]}</p>
-      <button className="remove-btn">Remove</button>
+      <button onClick={() => removeAudiobook(props.id)} className="remove-btn">Remove</button>
       <button>Update</button>
     </div>
   )
