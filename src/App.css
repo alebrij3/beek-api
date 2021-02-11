@@ -1,14 +1,57 @@
+* {
+  box-sizing: border-box;
+}
 .App {
   width: 650px;
   max-width: 100%;
   margin: 0 auto;
+  font-size: 16px;
+  color: #333;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form input {
+  border-radius: 5px;
+  background: none;
+  height: 32px;
+  border: 1px solid lightgray;
+  margin: 8px;
 }
-
+button {
+  border-radius: 5px;
+  padding: 4px 8px;
+  border: none;
+  margin: 8px;
+  cursor: pointer;
+}
+button[type="submit"] {
+  background-color: #6fe2e6;
+  border: none;
+  margin: 8px;
+  cursor: pointer;
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+form label {
+  width: 100%;
+}
+.remove-btn {
+  color: red;
+  background: none;
+  padding: 0;
+  font-weight: normal;
+  text-decoration: underline;
+}
+.book-row {
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+.title, .author {
+  margin: 0;
+}
+.title {
+  font-weight: bold;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
