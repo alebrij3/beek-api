@@ -1,10 +1,12 @@
+import config from '../api-config';
+
 const Search = () => {
   var requestOptions = {
     method: 'GET',
     redirect: 'follow'
   };
   
-  fetch(`https://api.contentful.com/spaces/${process.env.SPACE_ID}/environments/${process.env.ENVIRONMENT}/entries?select=fields,sys.id,sys.version&locale=es-MX&content_type=${process.env.CONTENT_TYPE_ID}`, requestOptions)
+  fetch(`https://api.contentful.com/spaces/${config.SPACE_ID}/environments/${config.ENVIRONMENT}/entries?select=fields,sys.id,sys.version&locale=es-MX&content_type=${config.CONTENT_TYPE_ID}`, requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
