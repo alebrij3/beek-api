@@ -73,6 +73,7 @@ const Search = () => {
       .catch(error => console.log('error', error));
     
     document.getElementById('add-book').reset()
+    getAllAudiobooks()
   }
 
   return(
