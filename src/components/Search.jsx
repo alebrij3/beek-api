@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import config from '../api-config';
 import AudiobookRow from './AudiobookRow';
 
 const Search = () => {
   const [allAudiobooks, setAllAudiobooks] = useState([])
-
   
   function getAllAudiobooks() {
     const requestOptions = {
@@ -15,9 +14,7 @@ const Search = () => {
       }
     };
 
-    console.log('called')
-
-    fetch("https://api.contentful.com/spaces/1t4hjzo7y0kb/environments/master/entries?select=fields,sys.id,sys.version&locale=es-MX&content_type=audiocontent-v8", requestOptions)
+    fetch(`${config.BASE_URL}spaces/${config.SPACE_ID}/environments/${config.ENVIRONMENT}/entries?select=fields,sys.id,sys.version&locale=es-MX&content_type=${config.CONTENT_TYPE_ID}`, requestOptions)
       .then(response => response.json())
       .then(result => {
         setAllAudiobooks(result.items)
@@ -33,7 +30,7 @@ const Search = () => {
     </form>
     <button onClick={getAllAudiobooks}>GetBooks</button>
     {allAudiobooks.map(item =>
-      <AudiobookRow key={item.sys.id}  {...item.fields} />
+      <AudiobookRow key={item.sys.id}  {...item.fields} id={item.sys.id} />
     )}
     </>
   )
