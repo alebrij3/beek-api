@@ -90,11 +90,12 @@ const Search = () => {
     };
     fetch(`${config.BASE_URL}spaces/${config.SPACE_ID}/environments/${config.ENVIRONMENT}/entries`, requestOptions)
       .then(response => response.json())
-      .then(result => console.log(result))
+      .then(result => {
+        alert(`${result.fields.title["es-MX"]} registrado`)
+      })
       .catch(error => console.log('error', error));
     
     document.getElementById('add-book').reset()
-    getAllAudiobooks()
   }
 
   return(
@@ -137,7 +138,7 @@ const Search = () => {
     <button onClick={getAllAudiobooks}>Get All Books</button>
     <div id="all-audiobooks">
       {allAudiobooks.map(item =>
-        <AudiobookRow key={item.sys.id}  {...item.fields} id={item.sys.id} version={item.sys.version} />
+        <AudiobookRow key={item.sys.id}  {...item.fields} id={item.sys.id} version={item.sys.version} getAllAudiobooks={getAllAudiobooks} />
       )}
     </div>
     </>
