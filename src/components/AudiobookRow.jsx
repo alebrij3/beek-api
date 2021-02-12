@@ -97,7 +97,7 @@ const AudiobookRow = (props) => {
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
     
-    document.getElementById("form" + id).reset()
+      document.getElementById("form" + props.id).style.display = "none"
   }
   console.log(props.version)
   return(
