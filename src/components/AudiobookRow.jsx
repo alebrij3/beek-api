@@ -104,7 +104,7 @@ const AudiobookRow = (props) => {
     <div className="book-row">
       <p className="title">{props.title["es-MX"]}</p>
       <p className="author">{props.authors["es-MX"][0]}</p>
-      <button onClick={() => showAudiobook(props.id)}>Audibook cover</button>
+      <button onClick={() => showAudiobook(props.id)}>Audiobook cover</button>
       <button onClick={showUpdateForm}>Update</button>
       <button onClick={() => removeAudiobook(props.id)} className="remove-btn">Remove</button>
       <div className="book-cover">
