@@ -98,6 +98,8 @@ const AudiobookRow = (props) => {
       .catch(error => console.log('error', error));
     
       document.getElementById("form" + props.id).style.display = "none"
+      document.getElementById('all-audiobooks').innerHTML = ''
+      props.getAllAudiobooks()
   }
   console.log(props.version)
   return(
