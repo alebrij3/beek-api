@@ -21,4 +21,4 @@ Open localhost:3000 on your web browser
 
 ## Missing stuff
 
-You can check what's missing in this project's <a href="https://github.com/alebrij3/beek-api/issues/2">Issues</a>
+You can check what's missing in this project's <a href="https://github.com/alebrij3/beek-api/issues/">Issues</a>
