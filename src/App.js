@@ -1,4 +1,3 @@
-import config from './api-config';
 import './App.css';
 import Search from './components/Search'
 
