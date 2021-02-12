@@ -1,9 +1,9 @@
 const config = {
-  TOKEN: "CFPAT-LBtveUvtDi7YjAhsyNzZURthngcrVnIr53eOZjYnxuc",
-  BASE_URL: "https://api.contentful.com/",
-  SPACE_ID: "1t4hjzo7y0kb",
-  ENVIRONMENT: "master",
-  CONTENT_TYPE_ID: "audiocontent-v8"
+  TOKEN: process.env.REACT_APP_TOKEN,
+  BASE_URL: process.env.REACT_APP_BASE_URL,
+  SPACE_ID: process.env.REACT_APP_SPACE_ID,
+  ENVIRONMENT: process.env.REACT_APP_ENVIRONMENT,
+  CONTENT_TYPE_ID: process.env.REACT_APP_CONTENT_TYPE_ID
 }
 
 export default config

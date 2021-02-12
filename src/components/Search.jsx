@@ -10,10 +10,9 @@ const Search = () => {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.REACT_APP_TOKEN}`
+        "Authorization": `Bearer ${config.TOKEN}`
       }
     };
-    console.log(process.env.REACT_APP_BASE_URL)
 
     fetch(`${config.BASE_URL}spaces/${config.SPACE_ID}/environments/${config.ENVIRONMENT}/entries?select=fields,sys.id,sys.version&locale=es-MX&content_type=${config.CONTENT_TYPE_ID}`, requestOptions)
       .then(response => response.json())
