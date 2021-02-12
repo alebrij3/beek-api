@@ -40,13 +40,16 @@ const AudiobookRow = (props) => {
       .catch(error => console.log('error', error));
 
   }
+
   const showUpdateForm = () => {
     document.getElementById("form" + props.id).style.display = "block"
   }
+
   const updateAudiobook = (e) => {
     e.preventDefault()
     const target = e.target
     const id = target.bookId.value
+    const version = target.version.value
     const audiobook = {
       "fields": {
         "title": {
@@ -80,11 +83,11 @@ const AudiobookRow = (props) => {
       }
     }
     const requestOptions = {
-      method: 'POST',
+      method: 'PUT',
       headers: {
         "Content-Type": "application/json",
         "X-Contentful-Content-Type": config.CONTENT_TYPE_ID,
-        "X-Contentful-Version": "1",
+        "X-Contentful-Version": version,
         "Authorization": `Bearer ${config.TOKEN}`
       },
       body: JSON.stringify(audiobook)
@@ -94,9 +97,9 @@ const AudiobookRow = (props) => {
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
     
-    document.getElementById('update-book').reset()
+    document.getElementById("form" + id).reset()
   }
-  console.log(props.title)
+  console.log(props.version)
   return(
     <div className="book-row">
       <p className="title">{props.title["es-MX"]}</p>
@@ -126,6 +129,7 @@ const AudiobookRow = (props) => {
         <input type="number" name="duration" defaultValue={parseInt(props.duration["es-MX"])} />
       </label>
       <input type="text" name="bookId" hidden value={props.id} readOnly />
+      <input type="text" name="version" hidden value={props.version} readOnly />
       <button type="submit">Update Book</button>
     </form>
     </div>
