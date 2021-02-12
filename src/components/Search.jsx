@@ -99,6 +99,7 @@ const Search = () => {
 
   return(
     <>
+    <h2>Search Audiobook</h2>
     <form action="" onSubmit={searchAudiobook}>
       <label htmlFor="search">Search
         <input type="text" name="search" />
@@ -108,9 +109,9 @@ const Search = () => {
     </form>
 
     {searchResults.map(item =>
-      <AudiobookRow key={item.sys.id}  {...item.fields} id={item.sys.id} version={item.sys.version} />
+      <AudiobookRow key={item.sys.id}  {...item.fields} id={item.sys.id} version={item.sys.version} getAllAudiobooks={getAllAudiobooks} />
     )}
-
+    <h2>Add Audiobook</h2>
     <form id="add-book" action="" onSubmit={addAudiobook}>
       <label htmlFor=""> Title
         <input type="text" name="title"/>
@@ -132,11 +133,13 @@ const Search = () => {
     </form>
     
 
-
+    <h2>All Audiobooks</h2>
     <button onClick={getAllAudiobooks}>Get All Books</button>
-    {allAudiobooks.map(item =>
-      <AudiobookRow key={item.sys.id}  {...item.fields} id={item.sys.id} version={item.sys.version} />
-    )}
+    <div id="all-audiobooks">
+      {allAudiobooks.map(item =>
+        <AudiobookRow key={item.sys.id}  {...item.fields} id={item.sys.id} version={item.sys.version} />
+      )}
+    </div>
     </>
   )
 }
