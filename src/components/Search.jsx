@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import config from '../api-config';
 import AudiobookRow from './AudiobookRow';
+require('dotenv').config();
 
 const Search = () => {
   const [allAudiobooks, setAllAudiobooks] = useState([])
