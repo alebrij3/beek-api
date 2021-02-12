@@ -19,6 +19,46 @@ Open localhost:3000 on your web browser
 
 <img src="screenshots/main.jpg">
 
+## Search
+
+Write the search query into the input and press / tap "Search"
+
+<img src="screenshots/search-example.jpg">
+
+## Add Audiobook
+
+Fill in the fields and then press / tap "Add Audiobook"
+
+<img src="screenshots/add-audiobook.jpg">
+
+You'll see an alert with the book title
+
+<img src="screenshots/add-alert.jpg">
+
+## Remove Audiobook
+
+To remove the Audiobook press/tap the "Remove" text
+
+<img src="screenshots/remove.jpg">
+
+## List All Audiobooks
+
+Press/tap "Get All Books"
+
+<img src="screenshots/get-all.jpg">
+
+## Update Audiobooks
+
+Click/tap on "Update"
+
+<img src="screenshots/update-btn.jpg">
+
+You will see a form pre-filled with the info of the Audiobook you are about to update
+
+<img src="screenshots/update.jpg">
+
+When you are done, just click the "Update Book" button
+
 ## Missing stuff
 
 You can check what's missing in this project's <a href="https://github.com/alebrij3/beek-api/issues/">Issues</a>
