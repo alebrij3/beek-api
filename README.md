@@ -15,6 +15,8 @@ Go inside the directory where you cloned the repo and install it
 
 `yarn install`
 
+Then run `yarn start`
+
 Open localhost:3000 on your web browser
 
 <img src="screenshots/main.jpg">
