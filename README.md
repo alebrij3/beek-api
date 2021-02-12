@@ -47,6 +47,12 @@ Press/tap "Get All Books"
 
 <img src="screenshots/get-all.jpg">
 
+## Audiobook Info
+
+When you click on "Audiobook cover" it shows the Image corresponding to the cover of the Audiobook. We are working on displaying all the Audiobook info.
+
+<img src="screenshots/cover.jpg">
+
 ## Update Audiobooks
 
 Click/tap on "Update"
