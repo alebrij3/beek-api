@@ -4,6 +4,7 @@ import AudiobookRow from './AudiobookRow';
 
 const Search = () => {
   const [allAudiobooks, setAllAudiobooks] = useState([])
+  const [searchResults, setSearchResults] = useState([])
   
   const getAllAudiobooks = () => {
     const requestOptions = {
@@ -22,10 +23,30 @@ const Search = () => {
       .catch(error => console.log('error', error));
   }
 
+  const searchAudiobook = (e) => {
+    e.preventDefault()
+    let query = e.target.search.value
+
+    const requestOptions = {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${config.TOKEN}`
+      }
+    };
+    fetch(`${config.BASE_URL}spaces/${config.SPACE_ID}/environments/${config.ENVIRONMENT}/entries?query=${query}&select=fields,sys.id&locale=es-MX&content_type=${config.CONTENT_TYPE_ID}`, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        setSearchResults(result.items)
+      })
+      .catch(error => console.log('error', error));
+    
+    document.getElementById('add-book').reset()
+  }
+
   const addAudiobook = (e) => {
     e.preventDefault()
     const target = e.target
-    console.log(target.original.checked)
     const audiobook = {
       "fields": {
         "title": {
@@ -78,13 +99,17 @@ const Search = () => {
 
   return(
     <>
-    <form action="">
-      <label htmlFor="">Search
-        <input type="text"/>
+    <form action="" onSubmit={searchAudiobook}>
+      <label htmlFor="search">Search
+        <input type="text" name="search" />
       </label>
       
       <button type="submit">Search</button>
     </form>
+
+    {searchResults.map(item =>
+      <AudiobookRow key={item.sys.id}  {...item.fields} id={item.sys.id} />
+    )}
 
     <form id="add-book" action="" onSubmit={addAudiobook}>
       <label htmlFor=""> Title
