@@ -13,6 +13,7 @@ const Search = () => {
         "Authorization": `Bearer ${config.TOKEN}`
       }
     };
+    console.log(process.env.BASE_URL)
 
     fetch(`${config.BASE_URL}spaces/${config.SPACE_ID}/environments/${config.ENVIRONMENT}/entries?select=fields,sys.id,sys.version&locale=es-MX&content_type=${config.CONTENT_TYPE_ID}`, requestOptions)
       .then(response => response.json())

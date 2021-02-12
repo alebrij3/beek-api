@@ -1,5 +1,5 @@
 const config = {
-  TOKEN: "",
+  TOKEN: "CFPAT-LBtveUvtDi7YjAhsyNzZURthngcrVnIr53eOZjYnxuc",
   BASE_URL: "https://api.contentful.com/",
   SPACE_ID: "1t4hjzo7y0kb",
   ENVIRONMENT: "master",
