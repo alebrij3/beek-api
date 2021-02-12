@@ -10,7 +10,7 @@ const Search = () => {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${config.TOKEN}`
+        "Authorization": `Bearer ${process.env.TOKEN}`
       }
     };
     console.log(process.env.BASE_URL)
